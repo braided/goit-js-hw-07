@@ -26,7 +26,7 @@ const images = [
     alt: 'Lighthouse Coast Sea',
   },
 ];
-const gallerypic = image => {
+const gallerypics = image => {
   const li = document.createElement('li');
   li.classList.add('gallery-item');
   const cart = document.createElement('img');
@@ -37,6 +37,6 @@ const gallerypic = image => {
   li.append(cart);
   return li;
 };
-const elements = images.map(gallerypic);
+const elements = images.map(gallerypics);
 
 gallery.append(...elements);
