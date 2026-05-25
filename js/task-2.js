@@ -26,21 +26,17 @@ const images = [
     alt: 'Lighthouse Coast Sea',
   },
 ];
-
-const elements = images
-  .map(({ url, alt }) => {
-    const li = document.createElement('li');
-    li.classList.add('gallery-item');
-
-    const img = document.createElement('img');
-    img.classList.add('gallery-image');
-    img.src = url;
-    img.alt = alt;
-    img.width = 400;
-
-    li.append(img);
-
-    return li;
-  });
+const gallerys = image => {
+  const li = document.createElement('li');
+  li.classList.add('gallery-item');
+  const cart = document.createElement('img');
+  cart.classList.add('gallery-img');
+  cart.src = image.url;
+  cart.alt = image.alt;
+  cart.width = 400;
+  li.append(cart);
+  return li;
+};
+const elements = images.map(gallerys);
 
 gallery.append(...elements);
